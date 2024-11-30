@@ -1,13 +1,12 @@
-# Logprob-Free Attack on Language Models
+# Stealing Part of a Production Language Model
 
-This repository contains an implementation of a logprob-free attack on pre-trained language models. The approach allows extraction of model logits without explicitly querying for the log-probabilities of tokens, instead using binary search and logit manipulation methods.
+This repository contains an implementation of sections 4.1, 4.2, and 6.1 from the paper 'Stealing Part of a Production Language Model'. The approach allows the last hidden layer to be extracted and logprob-free attack of the model.
 
 ## Features
+- Extract the last hidden layer of pre-trained language models (e.g., GPT-Neo).
 - Extract logits using a basic logprob-free attack.
-- Approximate hidden layer weights with Singular Value Decomposition (SVD).
-- Support for multiple pre-trained language models (e.g., GPT-Neo).
 
-## Requirements
+## Requirements'
 
 To install the dependencies, see the `requirements.txt` file.
 
@@ -34,7 +33,7 @@ To install the dependencies, see the `requirements.txt` file.
 
 1. Run the main script to perform logit extraction:
     ```bash
-    python logprob_free_attack.py
+    python main.py
     ```
 
 2. Modify the script to use different prompts or token ranges, as per your requirements.
@@ -45,11 +44,7 @@ To install the dependencies, see the `requirements.txt` file.
 - `layer_extraction()`: Reconstructs approximate layer weights from the SVD output.
 - `binary_search_extraction()`: Performs a binary search to determine the logit value for a target token.
 
-## Example
 
-To estimate the hidden layer dimension and recover logits:
-- First, the pre-trained GPT-Neo model is loaded.
-- Then, logit extraction is performed using prompts, followed by dimensionality extraction via SVD.
 
 ## License
 [MIT](https://opensource.org/licenses/MIT)
