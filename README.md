@@ -1,6 +1,6 @@
 # Stealing Part of a Production Language Model
 
-This repository contains an implementation of sections 4.1, 4.2, and 6.1 from the paper 'Stealing Part of a Production Language Model'. The approach allows the last hidden layer to be extracted and logprob-free attack of the model.
+This repository contains a toy implementation of sections 4.1, 4.2, and 6.1 from the paper 'Stealing Part of a Production Language Model'. The approach allows the last hidden layer to be extracted and logprob-free attack of the model.
 
 ## Features
 - Extract the last hidden layer of pre-trained language models (e.g., GPT-Neo).
