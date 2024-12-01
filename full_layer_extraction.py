@@ -1,7 +1,7 @@
 import torch
 from tqdm import tqdm
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 
 
@@ -48,6 +48,18 @@ def dim_extraction(Q):
     diffs = log_singular_values[:-1] - log_singular_values[1:]
     filtered_diffs = torch.where(log_singular_values[:-1] > 0, 1, -1) * diffs
     h = torch.argmax(filtered_diffs).item() + 1
+
+    # Plot the singular values
+    plt.figure(figsize=(10, 6))
+    plt.plot(range(1, len(S) + 1), S.cpu().numpy(), label='Singular Values')
+    plt.ylim(0, 1000)  # Limit the y-axis to values between 0 and 1000
+    plt.xlabel('Index of Singular Values')
+    plt.ylabel('Singular Value')
+    plt.legend()
+    plt.grid(True)
+    plt.savefig('singular_values_plot.png')
+    plt.show()
+
     return U, S, h
 
 def layer_extraction(U, S, h):
