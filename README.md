@@ -6,7 +6,7 @@ This repository contains a toy implementation of sections 4.1, 4.2, and 6.1 from
 - Extract the last hidden layer of pre-trained language models (e.g., GPT-Neo).
 - Extract logits using a basic logprob-free attack.
 
-## Requirements'
+## Requirements
 
 To install the dependencies, see the `requirements.txt` file.
 
@@ -44,6 +44,11 @@ To install the dependencies, see the `requirements.txt` file.
 - `layer_extraction()`: Reconstructs approximate layer weights from the SVD output.
 - `binary_search_extraction()`: Performs a binary search to determine the logit value for a target token.
 
+### Visualization of Singular Value
+
+Below is a visualization of the singular values extracted during the model analysis:
+
+![Singular Values Plot](singular_values_plot.png)
 
 
 ## License
