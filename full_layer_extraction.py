@@ -3,11 +3,7 @@ from tqdm import tqdm
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-
-
 # Query the Model with Multiple Inputs to Get Logits
-
 
 def get_Q(tokenized_prompts, model):
     """
