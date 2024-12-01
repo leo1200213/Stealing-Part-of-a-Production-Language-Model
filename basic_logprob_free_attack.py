@@ -15,8 +15,8 @@ def binary_search_extraction(model, epsilon, inputs_tokenized, target_token, bia
     Returns:
         float: Estimated minimal logit bias.
     """
-    alpha_i = 0
-    beta_i = bias
+    alpha_i = -bias
+    beta_i = 0
     input_ids = inputs_tokenized["input_ids"]
 
     original_output = model.generate(
