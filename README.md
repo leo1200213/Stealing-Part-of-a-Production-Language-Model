@@ -47,7 +47,6 @@ To install the dependencies, see the `requirements.txt` file.
 ### Visualization Result
 Below is a visualization of the singular values extracted during the model analysis and logit vector(id 0-99) comparison between the ground truth and our estimated result:
 
-<img src="Visualization/singular_values_plot.png" alt="Singular Values Plot" width="600"/>
 <div style="display: flex; justify-content: space-evenly; align-items: center; flex-wrap: nowrap;">
     <div style="text-align: center; margin-right: 10px;">
     <img src="Visualization/singular_values_plot.png" alt="Singular Values Plot" width="400"/>
