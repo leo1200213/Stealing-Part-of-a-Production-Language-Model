@@ -48,7 +48,7 @@ To install the dependencies, see the `requirements.txt` file.
 
 Below is a visualization of the singular values extracted during the model analysis:
 
-<img src="singular_values_plot.png" alt="Singular Values Plot" width="400"/>
+<img src="singular_values_plot.png" alt="Singular Values Plot" width="600"/>
 
 
 ## License
