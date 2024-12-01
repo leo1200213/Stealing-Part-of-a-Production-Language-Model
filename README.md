@@ -59,6 +59,17 @@ Below is a visualization of the singular values extracted during the model analy
     </div>
 </div>
 
+<div style="display: flex; justify-content: space-between;">
+    <div style="text-align: center; margin-right: 10px;">
+        <img src="Visualization/logit_vector_comparison(epsilon=0.5).png" alt="Logit Vector Comparison (ε = 0.5)" width="400"/>
+        <p>Logit Vector Comparison (ε = 0.5)</p>
+    </div>
+    <div style="text-align: center; margin-left: 10px;">
+        <img src="Visualization/logit_vector_comparison(epsilon=0.05).png" alt="Logit Vector Comparison (ε = 0.05)" width="400"/>
+        <p>Logit Vector Comparison (ε = 0.05)</p>
+    </div>
+</div>
+
 
 ## License
 [MIT](https://opensource.org/licenses/MIT)
