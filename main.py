@@ -10,6 +10,7 @@ import torch
 import logging
 import warnings
 from tqdm import tqdm
+import matplotlib.pyplot as plt
 
 # Suppress specific warnings and logging
 logging.getLogger("transformers").setLevel(logging.ERROR)
@@ -49,7 +50,7 @@ if __name__ == '__main__':
     print(f"--------------------Reconstructed W--------------------\nW_tilde :{W_tilde}")
     
     # Step 5: Perform Basic Logprob-free Attack
-    epsilon = 0.000005
+    epsilon = 0.5
     prompt = 'I want to find logit vector!'
     estimated_logit_vector = []
     bias = 50
@@ -63,9 +64,14 @@ if __name__ == '__main__':
     
     distance = np.linalg.norm(np.array(estimated_logit_vector) - np.array(gt_logit_vector))
     print(f"L2 distance between ground truth logit vector and estimated logit vector: {distance}")
-
-
-
     
-
-
+    plt.figure(figsize=(10, 6))
+    plt.plot(range(1, len(gt_logit_vector) + 1), gt_logit_vector, label='Right Logit Vector', color='blue')
+    plt.plot(range(1, len(estimated_logit_vector[:100]) + 1), estimated_logit_vector[:100], label='Estimated Logit Vector', color='orange')
+    plt.xlabel('Token Index')
+    plt.ylabel('Logit Value')
+    plt.title(f'Comparison of Right Logit Vector and Estimated Logit Vector(epsilon={epsilon})')
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(f'logit_vector_comparison(epsilon={epsilon}).png')
+    plt.show()
