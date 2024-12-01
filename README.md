@@ -44,17 +44,16 @@ To install the dependencies, see the `requirements.txt` file.
 - `layer_extraction()`: Reconstructs approximate layer weights from the SVD output.
 - `binary_search_extraction()`: Performs a binary search to determine the logit value for a target token.
 
-### Visualization of Singular Value
-
-Below is a visualization of the singular values extracted during the model analysis:
+### Visualization Result
+Below is a visualization of the singular values extracted during the model analysis and logit vector(id 0-99) comparison between the ground truth and our estimated result:
 
 <img src="Visualization/singular_values_plot.png" alt="Singular Values Plot" width="600"/>
-<div style="display: flex; justify-content: space-around;">
-    <div style="text-align: center;">
+<div style="display: flex; justify-content: space-evenly; align-items: center; flex-wrap: nowrap;">
+    <div style="text-align: center; margin-right: 10px;">
         <img src="Visualization/logit_vector_comparison(epsilon=0.5).png" alt="Logit Vector Comparison (ε = 0.5)" width="400"/>
         <p>Logit Vector Comparison (ε = 0.5)</p>
     </div>
-    <div style="text-align: center;">
+    <div style="text-align: center; margin-left: 10px;">
         <img src="Visualization/logit_vector_comparison(epsilon=0.05).png" alt="Logit Vector Comparison (ε = 0.05)" width="400"/>
         <p>Logit Vector Comparison (ε = 0.05)</p>
     </div>
