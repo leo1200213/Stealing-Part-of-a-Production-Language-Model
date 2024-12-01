@@ -62,9 +62,5 @@ Below is a visualization of the singular values extracted during the model analy
     </div>
 </div>
 
-
-## License
-[MIT](https://opensource.org/licenses/MIT)
-
 ## Acknowledgments
 This project is inspired by the paper "Stealing Part of a Production Language Model." Special thanks to the authors and community contributors who have provided the foundational resources.
