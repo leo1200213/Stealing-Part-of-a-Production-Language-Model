@@ -49,8 +49,16 @@ To install the dependencies, see the `requirements.txt` file.
 Below is a visualization of the singular values extracted during the model analysis:
 
 <img src="Visualization/singular_values_plot.png" alt="Singular Values Plot" width="600"/>
-<img src="Visualization/logit_vector_comparison(epsilon=0.5).png" alt="logit_vector_comparison_between_gt_and_the_estimated" width="600"/>
-<img src="Visualization/logit_vector_comparison(epsilon=0.05).png" alt="logit_vector_comparison_between_gt_and_the_estimated" width="600"/>
+<div style="display: flex; justify-content: space-around;">
+    <div style="text-align: center;">
+        <img src="Visualization/logit_vector_comparison(epsilon=0.5).png" alt="Logit Vector Comparison (ε = 0.5)" width="400"/>
+        <p>Logit Vector Comparison (ε = 0.5)</p>
+    </div>
+    <div style="text-align: center;">
+        <img src="Visualization/logit_vector_comparison(epsilon=0.05).png" alt="Logit Vector Comparison (ε = 0.05)" width="400"/>
+        <p>Logit Vector Comparison (ε = 0.05)</p>
+    </div>
+</div>
 
 
 ## License
