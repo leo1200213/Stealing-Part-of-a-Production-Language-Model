@@ -28,9 +28,10 @@ def binary_search_extraction(model, epsilon, inputs_tokenized, target_token, bia
             )
     
 
-    top_token_id = torch.argmax(original_output.scores[0][0]).item()
-    top_logit = original_output.scores[0][0].max().item()
-    
+    #########  IMPORTANT!  #########
+    # Since we can't access logits(scores) or logprobs of the model in the seeting, we set the top token as our reference point.
+    top_token_id = original_output.sequences[0][-1].item()
+    top_logit = 0
     #print("top_token=",top_token)
     #print("top_logit",top_logit)
     if (top_token_id==target_token):
@@ -46,6 +47,7 @@ def binary_search_extraction(model, epsilon, inputs_tokenized, target_token, bia
                 return_dict_in_generate=True,
                 temperature=0
             )
+            # Some LLMs don't provide the logit bias parameter for users, so we maually mimic the function of the logit bias.
             logits = output.scores[0][0].cpu()
             logits[target_token] += bias_i
             most_likely_token_id = torch.argmax(logits).item()
@@ -56,6 +58,9 @@ def binary_search_extraction(model, epsilon, inputs_tokenized, target_token, bia
                 
             else:
                 alpha_i = bias_i
+                
+    #########  IMPORTANT!  #########
+    # Since we can't access logits(scores) or logprobs of the model in the seeting, we can only get the relative logit value instead of the absolute logit value.
     estimated_logit = top_logit - ((alpha_i + bias_i) / 2)
     right_logit_vector = original_output.scores[0][0][:100].tolist() if target_token == 99 else None
             
