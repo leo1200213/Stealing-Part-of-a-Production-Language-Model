@@ -27,7 +27,7 @@ def get_Q(tokenized_prompts, model):
             )
             logits = output.scores[0].squeeze(0).detach().cpu().numpy()
         logits_list.append(logits)
-    return np.array(logits_list).T  # Return as matrix Q (l x n)
+    return np.array(logits_list).T  # Return as matrix Q (n x l)
 
 def dim_extraction(Q):
     """
